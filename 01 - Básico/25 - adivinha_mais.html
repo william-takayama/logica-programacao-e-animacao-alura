@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script type="text/javascript">
+
+	function sorteia() {
+
+		return Math.round(Math.random() * 10);
+
+	}
+
+	function sorteiaNumeros(quantidade) {
+
+		var segredos = [];
+		var contador = 1;
+
+		while (contador <= quantidade) {
+
+			var numeroAleatorio = sorteia();
+			var achou = false;
+
+			for (var posicao = 0; posicao < segredos.length; posicao++){
+				if (segredos[posicao] == numeroAleatorio) {
+
+					achou = true;
+					break;
+				}
+			}
+
+			if (achou == false) {
+				segredos.push(numeroAleatorio);
+				contador++;
+			}
+		}
+
+		return segredos;
+
+	}
+
+	var segredos = sorteiaNumeros(4);
+	console.log(segredos);
+
+	var input = document.querySelector("input");
+	input.focus();	
+
+	function verifica() {
+
+		var achou = false;
+
+		for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+			if (input.value == segredos[posicao]) {
+
+				alert("Você ACERTOU!");
+				achou = true;
+				break;
+			}
+		}
+
+		if (achou == false) {
+
+			alert("Você ERROU!");
+
+		}
+
+		input.value = "";
+		input.focus();
+
+	}	
+	
+	var button = document.querySelector("button");
+
+	// chama a função sem parentêses! Pois, no console ele chamará a função sem executá-la. Neste caso verifica fica dentro no button.onclick
+	button.onclick = verifica;
+
+
+</script>

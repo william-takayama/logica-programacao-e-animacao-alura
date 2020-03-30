@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+ </script>
+
+ <script type="text/javascript">
+   	
+   	var numeroIncial = parseInt(prompt("Entre com o número inicial: "));
+   	var contador = 1
+   	var limite = parseInt(prompt("Entre com o número limite: "));
+    var numeroExcluido1 = parseInt(prompt("Entre com o primeiro número que deseja excluir: ")) ;
+    var numeroExcluido2 = parseInt(prompt("Entre com o primeiro número que deseja excluir: ")) ;
+
+   	while (numeroIncial <= limite){
+
+   		mostra("O número atual é: " + numeroIncial);
+   		numeroIncial = numeroIncial + contador;
+        if (numeroIncial == numeroExcluido1) {
+
+          numeroIncial = numeroIncial + contador;
+
+        }
+        if (numeroIncial == numeroExcluido2) {
+
+          numeroIncial = numeroIncial + contador;
+
+        } 
+
+   	}
+
+    mostra("FIM!")
+
+</script>

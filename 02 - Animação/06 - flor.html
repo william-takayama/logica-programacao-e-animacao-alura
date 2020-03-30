@@ -1,0 +1,46 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2*3.14);
+        pincel.fill();
+    }
+
+//    var raioPadrao = 25; 
+
+//    desenhaCirculo(300, 200, raioPadrao, "red");
+//    desenhaCirculo(300, 150, raioPadrao, "yellow");
+//    desenhaCirculo(250, 200, raioPadrao, "orange");
+//    desenhaCirculo(300, 250, raioPadrao, "blue");
+//    desenhaCirculo(350, 200, raioPadrao, "black");
+    
+    function desenhaFlor(x,y){
+        
+        var raioPadrao = parseFloat(prompt("Qual o raio padrão?"));
+
+        if (raioPadrao > 400/6) { 
+
+            alert("Coloque um raio que seja menor do que: " + Math.round(400/6));
+
+        } else {
+                
+            desenhaCirculo(x, y, raioPadrao, "red");
+            desenhaCirculo(x, y+2*raioPadrao, raioPadrao, "yellow");
+            desenhaCirculo(x, y-2*raioPadrao, raioPadrao, "blue");
+            desenhaCirculo(x+2*raioPadrao, y, raioPadrao, "black");
+            desenhaCirculo(x-2*raioPadrao, y, raioPadrao, "orange");
+        }
+    }
+
+    desenhaFlor(300,200)
+
+</script>

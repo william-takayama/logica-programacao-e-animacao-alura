@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+ </script>
+
+ <script type="text/javascript">
+   	
+   	var numeroPar = 0;
+   	var contador = 2;
+   	var limite = parseInt(prompt("Entre com o número limite: "));
+
+   	while (numeroPar <= limite){
+
+   		mostra("O número atual é: " + numeroPar);
+   		numeroPar = numeroPar + contador;
+
+   	}
+
+</script>

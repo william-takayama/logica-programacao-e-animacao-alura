@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+
+	function desenhaQuadrados () {
+
+		var color = prompt("Qual é a cor do seu quadrado?");
+		var tamanho = parseFloat(prompt("Qual é o tamanho do seu quadrado?"));
+		var quantidade = parseFloat(prompt("Quantos quadrados você deseja desenhar?"))
+		var contador = 1;
+
+		var espacador = 0;
+
+		while (contador <= quantidade) {
+
+			pincel.fillStyle = color;
+			pincel.fillRect(espacador, 0, tamanho, tamanho);
+			pincel.strokeStyle = "black";
+			pincel.strokeRect(espacador, 0, tamanho, tamanho);
+			contador++;
+			espacador = tamanho*(contador-1);
+
+		}
+
+	}
+
+	desenhaQuadrados();
+
+
+</script>

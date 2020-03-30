@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+	
+	function pulaLinha() {
+
+		document.write("<br><br>");
+
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+		pulaLinha();
+
+	}
+
+	function criaEmail(primeiroNome, segundoNome, hostEmail) {
+
+		email = mostra(primeiroNome + "-" + segundoNome + "@" + hostEmail + ".com");
+		return email;
+
+	}
+
+</script>
+
+<script type="text/javascript">
+	
+	var primeiroNome = prompt("Informe seu Primeiro Nome");
+	var segundoNome = prompt("Informe seu Segundo Nome");
+	var hostEmail = prompt("Deseja criar um e-mail em qual host?");
+	criaEmail(primeiroNome, segundoNome, hostEmail);
+
+</script>

@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+ </script>
+
+ <script type="text/javascript">
+
+  var loginCadastrado = "foxmaria"
+  var senhaCadastrada = "chimbinha@!"
+  var maximoTentativas = 3;
+  var tentativaAtual = 1;
+
+  while (tentativaAtual <= maximoTentativas) {
+
+      var loginInformado = prompt("Digite seu nome de usuário");
+      var senhaInformada = prompt("Digite sua senha");
+
+      if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+          alert("Bem-vindo ao sistema, " + loginInformado);
+
+          tentativaAtual = maximoTentativas + 1; 
+
+          // acertou, então faço o gasto de todas as tentativas para sair do loop. Lá embaixo vai incrementar + 1! 
+
+       // senha cadastrada diferente senha informada 
+      } else {
+
+        if (tentativaAtual == maximoTentativas){
+
+          alert("Você atingiu o número máximo de tentativas. Tente novamente mais tarde");
+
+        } else {
+
+          if (tentativaAtual == 1) {
+
+            alert("Usuário ou senha incorretos. Você tem mais " + (maximoTentativas - tentativaAtual) + " tentativas.");
+
+          } else 
+
+            alert("Usuário ou senha incorretos. Você tem mais " + (maximoTentativas - tentativaAtual) + " tentativa.");
+
+        }
+
+          tentativaAtual ++;
+      }
+
+
+  }
+
+
+</script>

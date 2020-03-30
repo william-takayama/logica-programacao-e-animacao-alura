@@ -1,0 +1,38 @@
+<canvas width="600" height="800"></canvas>
+
+<script type="text/javascript">
+	
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	// Sempre dê a cor antes de pintar a tela. Um artista escolhe a cor antes de colocar o pincel em ação HAHA //
+	pincel.fillStyle = "white";
+	pincel.fillRect(0,0,600,400);
+
+	pincel.fillStyle = "darkred";
+	pincel.fillRect(0,0,600,133.33);
+
+	pincel.fillStyle = "darkblue";
+	pincel.fillRect(0,266.66,600,133.33);
+
+	// Vamos desenhar a haste da bandeira, agora! //
+
+	pincel.fillStyle = "lightblue";
+	pincel.beginPath();
+	pincel.moveTo(0,0);
+	pincel.lineTo(20,0);
+	pincel.lineTo(20,600);
+	pincel.lineTo(0,600);
+	pincel.lineTo(0,0);
+	pincel.fill();
+
+	// Vamos desenhar um círculo //
+
+	pincel.fillStyle = "darkblue";
+	pincel.beginPath();
+	pincel.arc(300,200,25,0,2*3.14);
+	pincel.fill();
+
+
+
+</script>

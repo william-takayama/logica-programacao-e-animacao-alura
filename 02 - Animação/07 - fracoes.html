@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<canvas width="700" height="500"></canvas>
+
+<script type="text/javascript">
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+
+	function desenhaQuadrado(x, y, tamanho, cor) {
+
+    // aqui precisamos usar fillRect, strokeRect, etc 
+
+    	pincel.fillStyle = cor;
+		pincel.fillRect(x, y, tamanho, tamanho);
+		pincel.strokeStyle = "black";
+		pincel.strokeRect(x, y, tamanho, tamanho);
+
+
+	}
+
+	function desenhaTexto(texto, x , y) {
+	    var tela = document.querySelector('canvas');
+	    var pincel = tela.getContext('2d');
+
+	    pincel.font='20px Georgia';
+	    pincel.fillStyle='black';
+	    pincel.fillText(texto, x, y);    
+	}
+
+
+
+	desenhaTexto("Digite uma fração menor do que 1?", 50, 30);
+
+	var x = 50;
+	var y = 50;
+	var tamanho = 50;
+	
+
+	
+		var numerador = parseInt(prompt("Qual é o numerador?"));
+		var denominador = parseInt(prompt("Qual é o denominador?"));
+
+	if (numerador > denominador) {
+
+		alert("Digite outro número!")
+	
+	}
+
+
+	
+	for (var contador = 0; contador < denominador; contador++) {
+
+		if (contador < numerador) {
+			
+			desenhaQuadrado(x, y, tamanho, "green");
+		
+		} else {
+
+			desenhaQuadrado(x, y, tamanho, "white");
+		}
+
+		x = x + tamanho;
+
+	}
+
+	desenhaTexto("A fração foi de: " + numerador + "/" + denominador, 50, y*3);
+
+</script>

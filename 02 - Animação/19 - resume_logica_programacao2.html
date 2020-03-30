@@ -1,0 +1,65 @@
+<meta charset = UTF-8>
+
+	<h1>CURSO - LÓGICA DE PROGRAMAÇÃO II</h1>
+
+	O que eu aprendi nesse curso de lógica de programação II?
+	<hr></hr>
+
+	<br>As linguagens utilizadas foram: HTML + JavaScript
+	<hr></hr>
+
+	<br> No html usamos a TAG <b>< CANVAS width="xxx" height="yyy"></b>, para permitir a interação de desenhos e animações, com o usuário no JS! Utilizando:
+	<br> 1) var tela = document.querySelector('canvas');
+	<br> 2) Dando cor a nossa tela com: pincel.fillStyle = 'grey'; pincel.fillRect(0, 0, 600, 400);
+	<br> 
+	<br> - Criamos funções para desenhar com <b>pontos</b> e <b>pinceis</b>. Utilizando:
+	<br> 1) var pincel = tela.getContext('2d'); 
+	<br> 2) 
+	<br> - Habilitamos o uso de paletas de cores, com a TAG < input type="color" > e a var paleta = document.querySelector("input");
+	<br> - Criar animações com o uso do setInterval(function, 3000); 3000 = 3s
+	<br> - Ler o que está sendo digitado no teclado, como utilizando as setas, utilizando como evento document.onkeydown e chamando a função que analisa qual tecla está sendo usada, com evento.keyCode == var esquerda;
+	<br> - Interpretar se as teclas ALT e SHIFT estão sendo pressionadas e atribuir uma função a elas. evento.shiftKey e evento.altKey
+	<br> - Desenhar gráficos com acumuladores e arrays
+
+
+	<br> - pincel.clearRect(x,y,600,400); Limpa o retângulo que estiver nas coordenadas x,y e do tamanho de 600x400px;
+	<br> - tela.<b>onmousedown</b> = habilitaDesenhar; Quando o <b>mouse estiver pressionado</b>
+	<br> - tela.<b>onmouseup</b> = desabilitaDesenhar; Quando o <b>mouse não estiver pressionado </b>
+	<br> - button.<b>onclick</b> = limpaTela; Quando clicar no botão, executar a função limpaTela();
+	<br> - tela.<b>onmousemove</b> = desenhaCirculo; Quando o mouse se mover dentro do CANVAS, executar a função desenhaCirculo();
+
+	<br>	<b>function desenhaCirculo(evento) {</b>
+	<br>		if(desenha) { 
+	<br>    		var x = evento.pageX - tela.offsetLeft; 
+    <br>   			var y = evento.pageY - tela.offsetTop;
+	<br>   	 		pincel.fillStyle = paleta.value;
+    <br>    		pincel.beginPath();
+    <br>    		pincel.arc(x, y, 10, 0, 2 * 3.14);
+    <br>    		pincel.fill();
+    <br>    	}
+    <br>	}
+
+	<hr></hr>
+
+
+
+
+<script type="text/javascript">
+
+	function pulaLinha(pulos){
+
+		while (pulos >= 1) {
+			document.write("<br>");
+			pulos = pulos - 1;
+		}
+	}
+
+	var pulos = 2;
+
+
+
+
+</script>
+
+<input></input>
+<button>Botão</button>

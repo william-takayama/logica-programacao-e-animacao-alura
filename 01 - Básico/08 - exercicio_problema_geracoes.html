@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+	
+	function pulaLinha() {
+
+		document.write("<br>");
+
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+
+	}
+
+
+</script>
+
+<script type="text/javascript">
+	
+	var geracoes = 28;
+	var chegadaBrasil = 1500;
+	var anoAtual = 2020;
+	var totalGeracoes = (anoAtual - chegadaBrasil)/geracoes;
+
+	mostra("Desde " + chegadaBrasil + " até o ano " + anoAtual + " se passaram " + Math.round(totalGeracoes) + "!");
+	pulaLinha();
+
+
+</script>

@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<h3> Cálculo - Álcool ou Gasolina? </h3>
+
+<button>Qual o melhor consumo?</button>
+
+<br></br>
+
+<script type="text/javascript">
+	
+	function pularLinha() { 
+
+		document.write("<br>");			
+
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+		pularLinha();
+
+	}
+
+</script>
+
+
+<script type="text/javascript">
+		
+	var	tanque = parseInt(prompt("Quantos litros cabem em seu tanque?"));
+	var caminhoDeGasolina = parseFloat(prompt("Quantos Km's você rodou com Gasolina?"));
+	var caminhoDeAlcool = parseFloat(prompt("Quantos Km's você rodou com Álcool?"));
+	var consumoDeGasolina = caminhoDeGasolina/tanque;
+	var consumoDeAlcool = caminhoDeAlcool/tanque;
+	// var puloLinha = "<br>" - Ótima opção para pular linha, mas é mais interessante pularLinha ser uma FUNÇÃO!// 
+
+	mostra("O consumo de Gasolina é de: " + consumoDeGasolina + "km/L!");
+	// document.write("O consumo de Gasolina é de: " + consumoDeGasolina + "km/L!");
+	// pularLinha();
+	mostra("O consumo de Álcool é de: " + consumoDeAlcool + "km/L!");
+	// document.write("O consumo de Álcool é de: " + consumoDeAlcool + "km/L!");
+	// pularLinha();
+
+	// É a mesma coisa que if x > y else //
+
+	function comparaConsumo() {
+
+		consumoDeGasolina*0.7 < consumoDeAlcool ? 
+		// document.write("<br> É mais vantajoso ir no Álcool!") : 
+		alert("É mais vantajoso ir no Álcool!") :
+		// document.write("<br> Oxi, vá de Gasolina, peão!");
+		alert("Oxi, vá de Gasolina, peão!");
+	}	
+
+	var button = document.querySelector("button");
+		
+	button.onclick = comparaConsumo;
+
+
+
+</script>
+

@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+
+Qual o tamanho do pincel?
+<input/>
+
+<br>
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	pincel.fillStyle = "grey";
+	pincel.fillRect(0,50,600,400);
+
+	function desenhaCirculo (evento) {
+
+		var x = evento.pageX - tela.offsetLeft;
+		var y = evento.pageY - tela.offsetTop;
+		var input = document.querySelector("input");		
+		input.focus();	
+		var raio = parseInt(input.value);
+		var incremento = 10;
+		var decremento = 5;
+
+		if (raio + incremento <= 40 && raio - decremento >= 10) {
+
+			if (evento.shiftKey) {
+
+				raio = raio + incremento;
+
+			} 
+
+			if (evento.altKey) {
+
+				raio = raio - decremento;
+
+			}
+
+			pincel.fillStyle = cores[indiceCorAtual];
+			pincel.beginPath();
+			pincel.arc(x, y, raio, 0, 2*3.14);
+			pincel.fill();
+			console.log( x + ", " + y );
+			// evento = parâmetro que mostra todos parâmetros do MouseEvent (inclusive posição clicada na tela)
+			// console.log(evento);
+
+		} else {
+
+			alert("Coloque um raio entre 15 e 30");
+		}
+	}
+
+	// não coloca parâmetro pois quem chama a FUNÇÃO e coloca o PARÂMETRO é o NAVEGADOR!
+	tela.onclick = desenhaCirculo;
+
+    var cores = ["lightblue", "red", "lightgreen"];
+	var indiceCorAtual = 0;
+
+    function mudaCor() {
+
+    	if (indiceCorAtual < cores.length-1) {
+
+   			indiceCorAtual++;
+   			alert("Você escolheu: " + cores[indiceCorAtual]);
+
+   		} else {
+
+   			indiceCorAtual = 0;
+			alert("Você escolheu: " + cores[indiceCorAtual]);
+
+   		}
+
+    	}	
+
+    tela.oncontextmenu = mudaCor;	
+
+
+</script>
+
+
+
+<script>
+//    var tela = document.querySelector('canvas');
+//    var pincel = tela.getContext('2d');
+//
+//    pincel.fillStyle = 'grey';
+//    pincel.fillRect(0, 0, 600, 400);
+//
+//    var raio = 10;
+//
+//    function desenhaCirculo(evento) {
+//
+//        var x = evento.pageX - tela.offsetLeft;
+//        var y = evento.pageY - tela.offsetTop;
+//
+//        console.log(x + ',' + y);
+
+//        if (evento.shiftKey && evento.altKey) {
+
+//            alert('Só aperte uma tecla por vez, por favor!');
+
+//        } else if(evento.shiftKey && raio + 10 <= 40) {
+//            raio = raio + 10;
+
+//        } else if(evento.altKey && raio - 5 >= 10) {
+//            raio = raio - 5;
+
+//        }
+
+//        pincel.fillStyle = 'blue';
+//        pincel.beginPath();
+//        pincel.arc(x, y, raio, 0, 2 * 3.14);
+//        pincel.fill();
+
+//    }
+
+//    tela.onclick = desenhaCirculo;
+
+</script>
